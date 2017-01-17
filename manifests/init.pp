@@ -4,8 +4,8 @@ class apache (
   $webpage_text = $::apache::params::webpage_text,
 ) inherits apache::params {
 
-  class { '::apache:install': } ->
-  class { '::apache:config': } ~>
+  class { '::apache::install': } ->
+  class { '::apache::config': } ~>
   class { '::apache::service': } ->
   Class['::apache']
 }
